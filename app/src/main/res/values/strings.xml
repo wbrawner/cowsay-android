@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cowsay</string>
+    <string name="input_hint_long">Enter your message below to get a shareable cowsay image:</string>
+    <string name="message_hint">Message</string>
+    <string name="preview">Preview</string>
+    <string name="share">Share</string>
+</resources>

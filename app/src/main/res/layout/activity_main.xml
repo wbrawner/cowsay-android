@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/message_hint_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_hint_long"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/message"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/message_hint"
+        android:inputType="textCapSentences|textAutoCorrect"
+        app:layout_constraintBottom_toTopOf="@+id/preview_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message_hint_long" />
+
+    <Button
+        android:id="@+id/preview_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/preview"
+        app:layout_constraintBottom_toTopOf="@+id/preview_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
+    <TextView
+        android:id="@+id/preview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF000000"
+        android:fontFamily="monospace"
+        android:background="#FFFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/share"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preview_button" />
+
+    <Button
+        android:id="@+id/share"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/share"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preview_text" />
+
+</android.support.constraint.ConstraintLayout>
