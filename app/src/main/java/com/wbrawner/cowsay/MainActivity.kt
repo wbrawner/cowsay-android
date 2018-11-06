@@ -41,9 +41,14 @@ class MainActivity : AppCompatActivity() {
                 cowImage.outputStream().use { cowOut ->
                     cowBitmap.compress(Bitmap.CompressFormat.JPEG, 100, cowOut)
                 }
+                val fileUri = FileProvider.getUriForFile(this@MainActivity, "com.wbrawner.cowsay.fileprovider", cowImage)
                 val shareIntent = Intent(Intent.ACTION_SEND).apply {
-                    data = FileProvider.getUriForFile(this@MainActivity, "com.wbrawner.cowsay.fileprovider", cowImage)
-                    type = contentResolver.getType(data!!)
+                    setDataAndType(
+                        fileUri,
+                        contentResolver.getType(fileUri)
+                    )
+                    putExtra(Intent.EXTRA_STREAM, fileUri)
+
                     addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 }
                 runOnUiThread {
